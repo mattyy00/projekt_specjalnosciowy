@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Zapis {% endblock %}
+
+{% block body %}
+    <body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">FindYourJanuszex</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ path('app_stronaglowna') }}">Strona główna</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="{{ path('app_ofertypracy') }}">Oferty pracy</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="{{ path('app_kontakt') }}">Kontakt</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-3">
+
+
+            <div class="colzapis">
+
+
+
+                <div class="p-4 p-md-5 border rounded-3 bg-light">
+                    {{ form(form) }}
+
+                {#
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+                        <label for="floatingInput">Imię</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+                        <label for="floatingInput">Nazwisko</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+                        <label for="floatingInput">Adres e-mail</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="phone" placeholder="123-123-123" pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
+
+                        <label for="phone">Nr telefonu </label>
+                    </div>
+                    <div class="checkbox mb-3">
+                        <select class="form-select" aria-label="Default select example">
+
+                            <option selected>Wybierz kurs</option>
+                            <option value="1">HTML</option>
+                            <option value="2">CSS</option>
+                            <option value="3">PHP</option>
+                            <option value="4">Symfony</option>
+                        </select>
+
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Zapisz się</button>
+
+                    #}
+
+
+
+
+                    {#
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Zapisz się</button>
+                    <hr class="my-4">
+                    <small class="text-muted">Klikając przycisk "Zapisz się", wyrażasz zgodę na warunki korzystania z serwisu.</small>
+                    #}
+
+                </div>
+
+            </div>
+
+
+
+
+        </main>
+
+
+
+    </div>
+
+
+
+    </body>
+{% endblock %}

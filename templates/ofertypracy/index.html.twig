@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ofertypracy {% endblock %}
+
+{% block body %}
+    <body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">FindYourJanuszex</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ path('app_stronaglowna') }}">Strona główna</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="{{ path('app_ofertypracy') }}">Oferty pracy</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="{{ path('app_kontakt') }}">Kontakt</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-3">
+            {% for joboffers in job_offers_db %}
+            <div class="card-shadow-sm">
+                <div class="card-body">
+                    <p class="card-text">{{ joboffers.position }}</p>
+                    <p class="card-text">{{ joboffers.city }}</p>
+                    <p class="card-text">{{ joboffers.salarymin }} - {{ joboffers.salarymax }} {{ joboffers.tax }} {{ joboffers.contract }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Zobacz</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </main>
+
+    </div>
+    </body>
+{% endblock %}
