@@ -29,4 +29,3 @@ class StronaglownaController extends AbstractController
     }
 }
 
-// 'controller_name' => 'StronaglownaController',

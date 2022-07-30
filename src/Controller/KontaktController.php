@@ -25,7 +25,7 @@ class KontaktController extends AbstractController
             $entityManager->persist($newContact);
             $entityManager->flush();
 
-
+            return $this->redirectToRoute('app_contact_submit', [], Response::HTTP_SEE_OTHER);
         }
 
 

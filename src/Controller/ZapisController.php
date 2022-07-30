@@ -34,7 +34,7 @@ class ZapisController extends AbstractController
             $entityManager->persist($signup);
             $entityManager->flush();
 
-            return new Response('Dodano cię do bazy danych kursu' . $signup->getId() . '. Udało się');
+            return $this->redirectToRoute('app_zapis_submit', [], Response::HTTP_SEE_OTHER);
         }
 
 
@@ -43,62 +43,4 @@ class ZapisController extends AbstractController
         ]);
     }
 
-
-    /*
-    public function testAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $task = new enquiry();
-        $form = $this->createForm(new QuestionType(), $task);
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $em->persist($task);
-            $em->flush();
-        }
-        return $this->render('index.html.twig', array('form'=>$form->createView()));
-
-    }
-    */
-    /*
-    public function createAction(Request $request)
-    {
-        $product = 'src\Entity\Signup';
-        $form = $this->createForm(SignupFormType::class, $product);
-
-        $form->handleRequest($request);
-
-        if($form->isValid())
-        {
-            $em= $this->getDoctrine()->getManager();
-            //Save into database code should go here...
-        }
-    }
-    */
-    /*
-    public function new(Request $request)
-    {
-
-
-
-
-
-        $newsignup= new Newsignup();
-
-        $form = $this->createForm(SignupFormType::class,$newsignup);
-
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $entityManager->persist($newsignup);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('stronaglowna/index.html.twig');
-        }
-
-        return new Response($twig->render('zapis/index.html.twig',['sub_form' => $form->createView()]));
-
-
-
-    }*/
 }
